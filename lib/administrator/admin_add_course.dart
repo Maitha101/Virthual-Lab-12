@@ -133,6 +133,7 @@ class _AdminAddCourseState extends State<AdminAddCourse> {
                     child: TextButton(
                         onPressed: () {
                           addNewCourse(courseTitle, dropDownValue,description,name);
+                          Navigator.pop(context);
                         },
                         child: Row(
                           children: [

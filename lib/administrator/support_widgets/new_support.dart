@@ -91,6 +91,7 @@ class _NewTSMessage extends State<NewTSMessage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return FirebaseAnimatedList(
+      reverse: true,
             query: statusNew,
             itemBuilder: (BuildContext context, DataSnapshot snapshot,
                 Animation<double> animation, int index) {

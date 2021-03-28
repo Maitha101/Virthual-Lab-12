@@ -45,54 +45,56 @@ class _AdminCourses extends State<AdminCourses> {
         title: Text('Manage Courses'),
         backgroundColor: Colors.deepPurple,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-            child: CustomText(
-              text: "Search :",
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
+              child: CustomText(
+                text: "Search :",
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  hintText: "type here !",
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder()),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: TextFormField(
+                decoration: InputDecoration(
+                    hintText: "type here !",
+                    prefixIcon: Icon(Icons.search),
+                    border: OutlineInputBorder()),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            child: Container(
-              color: Colors.grey,
-              height: 2,
-              width: double.infinity,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: Container(
+                color: Colors.grey,
+                height: 2,
+                width: double.infinity,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30, bottom: 10),
-            child: CustomText(
-              text: "Courses :",
-              fontWeight: FontWeight.bold,
-              fontSize: 22,
+            Padding(
+              padding: const EdgeInsets.only(left: 30, bottom: 10),
+              child: CustomText(
+                text: "Courses :",
+                fontWeight: FontWeight.bold,
+                fontSize: 22,
+              ),
             ),
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * .42,
-            child: FirebaseAnimatedList(
-                query: _ref,
-                itemBuilder: (BuildContext context, DataSnapshot snapshot,
-                    Animation<double> animation, int index){
-                  Map coursesAdmin = snapshot.value;
-                  coursesAdmin['key'] = snapshot.key;
-                  return _buildCourses(course : coursesAdmin);
-                }),
-          )
-        ],
+            Container(
+              height: MediaQuery.of(context).size.height * .42,
+              child: FirebaseAnimatedList(
+                  query: _ref,
+                  itemBuilder: (BuildContext context, DataSnapshot snapshot,
+                      Animation<double> animation, int index){
+                    Map coursesAdmin = snapshot.value;
+                    coursesAdmin['key'] = snapshot.key;
+                    return _buildCourses(course : coursesAdmin);
+                  }),
+            )
+          ],
+        ),
       ),
     );
   }
