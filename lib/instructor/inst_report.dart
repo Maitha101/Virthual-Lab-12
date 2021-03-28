@@ -1,5 +1,3 @@
-// Maitha Page
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator_nullsafe/circle/circular_percent_indicator.dart';

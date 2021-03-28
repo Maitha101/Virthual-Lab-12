@@ -1,5 +1,3 @@
-// Maitha Page
-
 import 'package:flutter/material.dart';
 import 'package:virtulab/widgets/custom_text.dart';
 import 'package:virtulab/widgets/custom_text_from_field.dart';
