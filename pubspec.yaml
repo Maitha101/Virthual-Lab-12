@@ -57,6 +57,8 @@ dependencies:
 
   email_validator: ^2.0.1
 
+  percent_indicator_nullsafe: ^4.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -90,6 +92,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
       - assets/images/
+      - assets/images/profile_pic.png
       - assets/virtulabDB.db
 
 
